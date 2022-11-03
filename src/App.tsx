@@ -8,6 +8,7 @@ import {
   UnderLineButton,
   WhiteUnderlineButton,
 } from './Buttons';
+import Calc from './Calc';
 
 export type CountryType = {
   no: number;
@@ -23,6 +24,9 @@ function App() {
     { no: 3, country: '피지', visited: false },
     { no: 4, country: '콜롬비아', visited: false },
   ]);
+  const [x, setX] = useState<number>(100);
+  const [y, setY] = useState<number>(200);
+  const [oper, setOper] = useState<string>('&');
 
   const [theme, setTheme] = useState<string>('basic');
   const addResult = (x: number, y: number) => {
@@ -44,7 +48,8 @@ function App() {
       <ItalicButton>이탤릭</ItalicButton>
       <UnderLineButton>언더라인</UnderLineButton>
       <WhiteUnderlineButton>화이트 언더라인</WhiteUnderlineButton>
-      <Footer theme={theme} />
+      <Calc x={x} y={y} oper={oper} />
+      {/* <Footer theme={theme} /> */}
     </div>
   );
 }

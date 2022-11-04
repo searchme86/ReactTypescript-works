@@ -17,7 +17,7 @@ function Header() {
             <Link className="btn btn-success menu" to="/about">
               About
             </Link>
-            <Link className="btn btn-success menu" to="/memebers">
+            <Link className="btn btn-success menu" to="/members">
               Members
             </Link>
             <Link className="btn btn-success menu" to="/songs">

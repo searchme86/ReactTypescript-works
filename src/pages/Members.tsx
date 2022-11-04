@@ -1,10 +1,17 @@
 import React from 'react';
 
 import { MemberType } from '../App';
+import { useNavigate } from 'react-router-dom';
 
 type Props = { members: Array<MemberType> };
 
 function Members(props: Props) {
+  const navigate = useNavigate();
+  const goHome = () => {
+    if (window.confirm('정말로 홈으로 이동할까요?')) {
+      navigate('/', { state: { from: '/members' } });
+    }
+  };
   let imgstyle = { width: 90, height: 80 };
   let list = props.members.map((member) => {
     return (
@@ -28,6 +35,9 @@ function Members(props: Props) {
       <div className="container">
         <div className="row">{list}</div>
       </div>
+      <button className="btn btn-secondary" onClick={goHome}>
+        goHome
+      </button>
     </div>
   );
 }

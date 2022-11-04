@@ -9,6 +9,7 @@ import Members from './pages/Members';
 
 import SongList from './pages/SongList';
 import Player from './pages/songs/Player';
+import SongIndex from './pages/songs/SongIndex';
 
 export type MemberType = { name: string; photo: string };
 export type SongType = {
@@ -90,6 +91,7 @@ function App() {
           {/* <Route path="/songs" element={<SongList songs={songs} />} />
           <Route path="/songs/:id" element={<SongDetail songs={songs} />} /> */}
           <Route path="/songs" element={<SongList songs={songs} />}>
+            <Route index element={<SongIndex />} />
             <Route path=":id" element={<Player songs={songs} />} />
           </Route>
         </Routes>

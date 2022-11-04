@@ -1,21 +1,24 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 function App() {
-  let msg = 'React-Typescript';
+  const elName: React.RefObject<HTMLInputElement> =
+    useRef<HTMLInputElement>(null);
 
-  const addResult = (x: number, y: number) => {
-    return (
-      <div className="card card-body bg-light md-3">
-        {x} + {y} = {x + y}
-      </div>
-    );
+  const goFirstInputElement = () => {
+    if (elName.current) elName.current.focus();
   };
 
   return (
-    <div className="container">
-      <h2>Hello {msg}</h2>
-      <hr className="dash-style" />
-      {addResult(4, 3)}
+    <div className="boxStyle">
+      이름 : <input ref={elName} type="text" defaultValue="홍길동" />
+      <br />
+      전화 : <input type="text" defaultValue="010-2222-3333" />
+      <br />
+      주소 : <input type="text" defaultValue="서울" />
+      <br />
+      <button type="button" onClick={goFirstInputElement}>
+        첫 번째 필드로 포커스 이동
+      </button>
     </div>
   );
 }

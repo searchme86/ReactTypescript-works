@@ -1,9 +1,10 @@
 import React from 'react';
+import UserSearch from './state/UserSearch';
 
 function App() {
   return (
     <div className="container">
-      <h1>hello React-typescript</h1>
+      <UserSearch />
     </div>
   );
 }

@@ -1,10 +1,10 @@
 import React from 'react';
-import UserSearch from './state/UserSearch';
+import EventComponents from './events/EventComponents';
 
 function App() {
   return (
     <div className="container">
-      <UserSearch />
+      <EventComponents />
     </div>
   );
 }

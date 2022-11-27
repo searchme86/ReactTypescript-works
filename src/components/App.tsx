@@ -1,10 +1,16 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import { store } from '../state/store';
+import RepositoriesList from './RepositoriesList';
 
 function App() {
   return (
-    <div className="container">
-      <h1>Hello world</h1>
-    </div>
+    <Provider store={store}>
+      <div>
+        <h1>search for a package</h1>
+        <RepositoriesList />
+      </div>
+    </Provider>
   );
 }
 

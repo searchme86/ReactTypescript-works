@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { actionCreators } from '../state';
+// import { useDispatch } from 'react-redux';
+// import { actionCreators } from '../state';
+import { useActions } from '../hooks/useActions';
 
 function RepositoriesList() {
   const [term, setTerm] = useState('');
-  const dispatch = useDispatch();
+  // useAction 훅으로 actionCreator를 모듈화 함
+  // const dispatch = useDispatch();
+  const { searchRepositories } = useActions();
 
   const InputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTerm(event.target.value);
@@ -12,7 +15,8 @@ function RepositoriesList() {
 
   const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    dispatch(actionCreators.searchRepositories(term) as any);
+    // dispatch(actionCreators.searchRepositories(term) as any);
+    searchRepositories(term);
   };
 
   return (

@@ -1,10 +1,9 @@
 import React from 'react';
-import UserSearch from './refs/UserSearch';
 
 function App() {
   return (
     <div className="container">
-      <UserSearch />
+      <h1>Hello world</h1>
     </div>
   );
 }

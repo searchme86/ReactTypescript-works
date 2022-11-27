@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 // import { useDispatch } from 'react-redux';
 // import { actionCreators } from '../state';
 import { useActions } from '../hooks/useActions';
+import { useTypedSelector } from '../hooks/useTypedSelector';
 
 function RepositoriesList() {
   const [term, setTerm] = useState('');
   // useAction 훅으로 actionCreator를 모듈화 함
   // const dispatch = useDispatch();
   const { searchRepositories } = useActions();
-  const { data, error, loading } = useSelector((state) => state.repositories);
+  const { data, error, loading } = useTypedSelector(
+    (state) => state.repositories
+  );
   console.log('data', data);
   console.log('error', error);
   console.log('loading', loading);
